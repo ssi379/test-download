@@ -59,6 +59,19 @@
       navigator.mediaDevices
         .getUserMedia({ audio: true, video: false })
         .then(handleSuccess);
+
+      navigator.permissions
+        .query({ name: "microphone" })
+        .then(function (result) {
+          if (result.state == "granted") {
+            console.log('result.state == "granted"');
+          } else if (result.state == "prompt") {
+            console.log('result.state == "prompt"');
+          } else if (result.state == "denied") {
+            console.log('result.state == "denied"');
+          }
+          result.onchange = function () {};
+        });
     </script>
   </body>
 </html>
