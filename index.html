@@ -32,7 +32,7 @@
         const options = { mimeType: "audio/webm" };
         const recordedChunks = [];
         const mediaRecorder = new MediaRecorder(stream, options);
-
+        console.log('mediaRecorder.addEventListener("dataavailable"');
         mediaRecorder.addEventListener("dataavailable", function (e) {
           if (e.data.size > 0) {
             console.log(i++, "pushing...");
@@ -44,7 +44,7 @@
             stopped = true;
           }
         });
-
+        console.log('mediaRecorder.addEventListener("stop"');
         mediaRecorder.addEventListener("stop", function () {
           console.log("stop 1");
           downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
