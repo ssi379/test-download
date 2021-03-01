@@ -40,8 +40,10 @@
         });
 
         mediaRecorder.addEventListener("stop", function () {
+          console.log("stop 1");
           downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
           downloadLink.download = "acetest.wav";
+          console.log("stop 2");
         });
         console.log("before recorder start");
         mediaRecorder.start();
