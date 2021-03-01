@@ -69,13 +69,13 @@
         .then(function (result) {
           if (result.state == "granted") {
             console.log('result.state == "granted"');
-            granted.innerHTML("granted:granted");
+            granted.innerHTML = "granted:granted";
           } else if (result.state == "prompt") {
             console.log('result.state == "prompt"');
-            granted.innerHTML("granted:prompt");
+            granted.innerHTML = "granted:prompt";
           } else if (result.state == "denied") {
             console.log('result.state == "denied"');
-            granted.innerHTML("granted:denied");
+            granted.innerHTML = "granted:denied";
           }
           result.onchange = function () {};
         });
