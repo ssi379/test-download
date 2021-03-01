@@ -11,6 +11,7 @@
 
     <a id="download">Download</a>
     <button id="stop">Stop</button>
+    <p id="granted"></p>
     <script>
       let shouldStop = false;
       let stopped = false;
@@ -19,6 +20,7 @@
 
       const downloadLink = document.getElementById("download");
       const stopButton = document.getElementById("stop");
+      const granted = document.getElementById("granted");
       var i = 0;
 
       stopButton.addEventListener("click", function () {
@@ -67,10 +69,13 @@
         .then(function (result) {
           if (result.state == "granted") {
             console.log('result.state == "granted"');
+            granted.innerHTML("granted");
           } else if (result.state == "prompt") {
             console.log('result.state == "prompt"');
+            granted.innerHTML("prompt");
           } else if (result.state == "denied") {
             console.log('result.state == "denied"');
+            granted.innerHTML("denied");
           }
           result.onchange = function () {};
         });
