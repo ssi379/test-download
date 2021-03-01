@@ -55,11 +55,11 @@
         mediaRecorder.start();
         console.log("after recorder start");
       };
-
+      console.log("before getUserMedia");
       navigator.mediaDevices
         .getUserMedia({ audio: true, video: false })
         .then(handleSuccess);
-
+      console.log("before permissions");
       navigator.permissions
         .query({ name: "microphone" })
         .then(function (result) {
