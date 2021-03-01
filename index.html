@@ -41,7 +41,7 @@
           downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
           downloadLink.download = "acetest.wav";
         });
-
+        console.log("before recorder start");
         mediaRecorder.start();
       };
 
