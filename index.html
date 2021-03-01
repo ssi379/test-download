@@ -14,12 +14,18 @@
     <script>
       let shouldStop = false;
       let stopped = false;
+      console.log("shouldStop", shouldStop);
+      console.log("stopped", stopped);
+
       const downloadLink = document.getElementById("download");
       const stopButton = document.getElementById("stop");
       var i = 0;
 
       stopButton.addEventListener("click", function () {
         shouldStop = true;
+        console.log("stop button clicked");
+        console.log("shouldStop", shouldStop);
+        console.log("stopped", stopped);
       });
 
       const handleSuccess = function (stream) {
